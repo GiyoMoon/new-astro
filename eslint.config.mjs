@@ -12,9 +12,18 @@ export default [
   },
   ...pluginTypescript.configs.recommended,
   ...pluginTailwind.configs['flat/recommended'],
-  pluginSolid.configs['flat/recommended'],
   pluginPrettier,
   ...pluginAstro.configs.recommended,
+  {
+    files: ['**/*.{ts,tsx}'],
+    ...pluginSolid.configs['flat/typescript'],
+    languageOptions: {
+      parser: tsParser,
+      parserOptions: {
+        project: true,
+      },
+    },
+  },
   {
     languageOptions: {
       parser: tsParser,
@@ -55,25 +64,12 @@ export default [
       'tailwindcss/enforces-shorthand': 'error',
       'tailwindcss/migration-from-tailwind-2': 'error',
       'tailwindcss/no-custom-classname': 'error',
+
       'solid/reactivity': 'off',
     },
   },
   {
-    files: ['**/*.astro'],
-    languageOptions: {
-      parser: astroParser,
-      parserOptions: {
-        parser: '@typescript-eslint/parser',
-        extraFileExtensions: ['.astro'],
-      },
-    },
-    rules: {
-      'solid/prefer-for': 'off',
-      'solid/self-closing-comp': 'off',
-    },
-  },
-  {
-    files: ['**/*.ts', '**/*.tsx', '**/*.astro'],
+    files: ['**/*.{ts,tsx,astro}'],
     languageOptions: {
       parserOptions: {
         project: true,
@@ -82,6 +78,16 @@ export default [
     rules: {
       '@typescript-eslint/no-unnecessary-condition': 'error',
       '@typescript-eslint/strict-boolean-expressions': 'error',
+    },
+  },
+  {
+    files: ['**/*.astro'],
+    languageOptions: {
+      parser: astroParser,
+      parserOptions: {
+        parser: tsParser,
+        extraFileExtensions: ['.astro'],
+      },
     },
   },
 ]
