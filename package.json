@@ -1,0 +1,39 @@
+{
+  "name": "PROJECT_NAME",
+  "private": true,
+  "description": "PROJECT_DESCRIPTION",
+  "homepage": "https://jasi.dev",
+  "license": "MIT",
+  "author": {
+    "name": "Jasmin Noetzli",
+    "email": "code@jasi.dev",
+    "url": "https://github.com/GiyoMoon"
+  },
+  "type": "module",
+  "scripts": {
+    "build": "astro build",
+    "clean": "rm -rf dist node_modules",
+    "dev": "astro dev",
+    "lint": "eslint --max-warnings=0 .",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@astrojs/solid-js": "^4.4.2",
+    "@astrojs/tailwind": "^5.1.2",
+    "@eslint/js": "^9.12.0",
+    "astro": "^4.16.2",
+    "astro-eslint-parser": "^1.0.3",
+    "eslint": "^9.12.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-astro": "^1.2.4",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-solid": "^0.14.3",
+    "eslint-plugin-tailwindcss": "^3.17.4",
+    "prettier": "^3.3.3",
+    "prettier-plugin-astro": "^0.14.1",
+    "solid-js": "^1.9.2",
+    "tailwindcss": "^3.4.13",
+    "typescript": "^5.6.3",
+    "typescript-eslint": "^8.8.1"
+  }
+}
